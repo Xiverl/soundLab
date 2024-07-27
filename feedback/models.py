@@ -28,15 +28,3 @@ class UserFeedback(Model):
 
     def __str__(self):
         return f'{self.fio} - {self.mobile}'
-
-
-class ChatID(Model):
-    chat_id: IntegerField = IntegerField(unique=True)
-    username: CharField = CharField(max_length=50, null=True, blank=True)
-
-    class Meta:
-        verbose_name = "ID чата Telegram"
-        verbose_name_plural = "ID чатов Telegram"
-
-    def __str__(self):
-        return self.username
