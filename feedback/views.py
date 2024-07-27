@@ -11,7 +11,7 @@ from feedback.models import UserFeedback
 def submit_info(request) -> HttpResponse:
     '''Обработчик данных пользователя из формы.'''
 
-    template_name: str = 'feedback/submit.html'
+    template_name: str = 'pages/about.html'
     form: UserInfoForm = UserInfoForm(request.POST or None)
     if request.method == 'POST':
         if form.is_valid():
