@@ -1,0 +1,20 @@
+# Ignore file
+.env
+db.sqlite3
+.pylintrc
+
+# Ignore dir
+media/
+venv/
+/.venv/
+
+# Ignore settings
+.vscode/
+
+# ignore migrations and pycache
+*/__pycache__/*
+*/__pycache__/*/*
+*/migrations/*
+*/migrations/*/*
+*/migrations/*/*/*
+!*/migrations/__init__.py
