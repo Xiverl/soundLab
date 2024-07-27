@@ -55,6 +55,18 @@ python manage.py runserver
 
 12. Откройте в браузере `http://127.0.0.1:8000/`
 
+## Настройки smtp сервера
+
+```python
+EMAIL_HOST = 'тут_указываем_адрес_smtp'
+EMAIL_PORT = 'здесь_указываем_порт_smtp'
+EMAIL_USE_SSL = False # Можно не трогать
+EMAIL_HOST_USER = 'Здесь_почта_отправителя'
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+EMAIL_HOST_PASSWORD = os.getenv('EMAIL_PASSWORD') # Берется из env файла
+```
+
+
 ## Дополнительные настройки виртуального окружения
 
 В проекте также используется файл виртуального окружения ```.env```.
