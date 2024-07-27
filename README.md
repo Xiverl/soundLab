@@ -24,7 +24,9 @@ SoundLab - это онлайн-платформа, предоставляюща�
 ## Установка и запуск
 
 1. Клонируйте репозиторий:
-```git clone https://github.com/your-username/soundlab.git```
+```bash
+git clone https://github.com/your-username/soundlab.git
+```
 
 2. Перейдите в директорию проекта:
 ```cd soundlab```
