@@ -29,18 +29,42 @@ git clone https://github.com/your-username/soundlab.git
 ```
 
 2. Перейдите в директорию проекта:
-```cd soundlab```
+```bash
+cd soundlab
+```
 
-3. Создайте и активируйте виртуальное окружение:
-```python -m venv venv source venv/bin/activate```
+4. Создайте и активируйте виртуальное окружение:
+```bash
+python -m venv venv source venv/bin/activate
+```
 
-4. Установите зависимости:
-```pip install -r requirements.txt```
+6. Установите зависимости:
+```bash
+pip install -r requirements.txt
+```
 
-5. Выполните миграции:
-```python manage.py migrate```
+8. Выполните миграции:
+```bash
+python manage.py migrate
+```
 
-6. Запустите сервер разработки:
-```python manage.py runserver```
+10. Запустите сервер разработки:
+```bash
+python manage.py runserver
+```
 
-7. Откройте в браузере `http://127.0.0.1:8000/`
+12. Откройте в браузере `http://127.0.0.1:8000/`
+
+## Дополнительные настройки виртуального окружения
+
+В проекте также используется файл виртуального окружения ```.env```.
+В нем хранятся дополнительные настройки проекта. Пример ```.env```:
+
+```python
+EMAIL_OUT="Надо_указать_почту_админа"
+SECRET_KEY="Секретный_ключ_проекта"
+EMAIL_PASSWORD="Пароль_почту_отправителя_для_smtp"
+TELEGRAM_BOT_TOKEN="Токен_телеграм_бота"
+ADMIN_TELEGRAM_CHAT_ID="id_чата_админа_в_телеграме"
+```
+
