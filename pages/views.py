@@ -8,7 +8,7 @@ def about(request) -> HttpResponse:
 
     template_name: str = 'pages/about.html'
     form: UserInfoForm = UserInfoForm
-    context = {'form': form}
+    context: dict = {'form': form}
     return render(request, template_name, context)
 
 
