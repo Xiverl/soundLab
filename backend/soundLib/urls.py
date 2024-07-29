@@ -18,10 +18,7 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 
-app_name = "sound-lib"
-
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('pages.urls', namespace='pages')),
-    path('feedback/', include('feedback.urls', namespace='feedback')),
+    path('api/', include('feedback.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

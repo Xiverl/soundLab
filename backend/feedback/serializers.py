@@ -1,0 +1,11 @@
+from rest_framework import serializers
+
+from feedback.models import UserFeedback
+
+
+class UserInfoSerializer(serializers.ModelSerializer):
+    """Сериализатор для ингредиентов."""
+
+    class Meta:
+        model = UserFeedback
+        fields = ('fio', 'mobile')

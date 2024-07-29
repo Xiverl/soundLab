@@ -10,7 +10,7 @@ class UserFeedback(Model):
         verbose_name="ФИО",
     )
     mobile = CharField(
-        max_length=11,
+        max_length=12,
         verbose_name="Номер телефона",
         blank=False,
         validators=(
