@@ -1,4 +1,5 @@
 import Carusel from "../components/carusel/carusel";
+import ContactModal from "../components/contact-modal/contact-modal";
 import Footer from "../components/footer/footer";
 import Gallery from "../components/gallery/gallery";
 import InfoService from "../components/info-service/info-service";
@@ -10,12 +11,13 @@ function About() {
     <>
       <Carusel />
 			<InfoService />
-			<hr class="hr-primary"></hr>
+			<hr className="hr-primary"></hr>
 			<Gallery />
-			<hr class="hr-primary"></hr>
+			<hr className="hr-primary"></hr>
 			<Info />
-			<hr class="hr-primary"></hr>
+			<hr className="hr-primary"></hr>
 			<Products />
+			<ContactModal />
 			<Footer />
     </>
   )

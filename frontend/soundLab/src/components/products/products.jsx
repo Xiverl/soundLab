@@ -1,6 +1,18 @@
+import React, { useState } from "react";
 import { Container, Card, Col, Row, Button } from "react-bootstrap";
+import ContactModal from "../contact-modal/contact-modal";
 
 function Products() {
+  const [showModal, setShowModal] = useState(false);
+
+  const handleShowModal = () => {
+    setShowModal(true);
+  };
+
+  const handleCloseModal = () => {
+    setShowModal(false);
+  };
+
   return (
     <Container>
       <h2 className="text-center mb-5">Услуги SoundLab</h2>
@@ -18,7 +30,9 @@ function Products() {
                 Изучите популярные цифровые аудиорабочие станции и освойте
                 навыки профессиональной звукозаписи.
               </Card.Text>
-              <Button className="btn-primary mt-auto">Связаться с нами</Button>
+              <Button className="btn-primary mt-auto" onClick={handleShowModal}>
+                Связаться с нами
+              </Button>
             </Card.Body>
           </Card>
         </Col>
@@ -35,7 +49,9 @@ function Products() {
                 Научитесь создавать сбалансированные и профессиональные миксы с
                 помощью передовых техник микширования.
               </Card.Text>
-              <Button className="btn-primary mt-auto">Связаться с нами</Button>
+              <Button className="btn-primary mt-auto" onClick={handleShowModal}>
+                Связаться с нами
+              </Button>
             </Card.Body>
           </Card>
         </Col>
@@ -52,11 +68,14 @@ function Products() {
                 Освойте искусство мастеринга и доведите свои треки до
                 профессионального уровня звучания.
               </Card.Text>
-              <Button className="btn-primary mt-auto">Связаться с нами</Button>
+              <Button className="btn-primary mt-auto" onClick={handleShowModal}>
+                Связаться с нами
+              </Button>
             </Card.Body>
           </Card>
         </Col>
       </Row>
+      <ContactModal show={showModal} onHide={handleCloseModal} />
     </Container>
   );
 }

@@ -3,6 +3,7 @@ asgiref==3.8.1
 certifi==2024.7.4
 Django==5.0.7
 django-bootstrap5==24.2
+django-cors-headers==4.4.0
 django-forms-bootstrap==3.1.0
 django-rest-framework==0.1.0
 djangorestframework==3.15.2
