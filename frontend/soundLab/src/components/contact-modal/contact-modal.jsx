@@ -26,7 +26,7 @@ function ContactModal({ show, onHide }) {
       mobile: formData.phone,
     };
 
-    fetch('http://127.0.0.1:8000/api/submit/', {
+    fetch('http://localhost/api/submit/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

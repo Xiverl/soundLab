@@ -3,6 +3,7 @@ import { Container, Row, Col } from "react-bootstrap";
 function Gallery() {
   return (
     <Container>
+      <hr className="hr-primary"></hr>
       <Row className="py-5">
         <Col lg={4} md={12} className="mb-4 mb-lg-0">
           <div className="d-flex flex-column h-100 justify-content-between">

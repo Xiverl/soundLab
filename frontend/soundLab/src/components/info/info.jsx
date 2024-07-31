@@ -10,6 +10,7 @@ import {
 function Info() {
   return (
     <Container className="py-5">
+      <hr className="hr-primary"></hr>
       <h2 className="text-center mb-5">Ключевые особенности SoundLab</h2>
       <Row className="justify-content-center">
         <Col className="col-md-6 mb-4 text-center text-md-left">
@@ -69,6 +70,7 @@ function Info() {
           </div>
         </Col>
       </Row>
+      <hr className="hr-primary"></hr>
     </Container>
   );
 }

@@ -11,11 +11,8 @@ function About() {
     <>
       <Carusel />
 			<InfoService />
-			<hr className="hr-primary"></hr>
 			<Gallery />
-			<hr className="hr-primary"></hr>
 			<Info />
-			<hr className="hr-primary"></hr>
 			<Products />
 			<ContactModal />
 			<Footer />

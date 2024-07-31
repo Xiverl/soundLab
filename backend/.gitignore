@@ -1,0 +1,7 @@
+# ignore migrations and pycache
+*/__pycache__/*
+*/__pycache__/*/*
+*/migrations/*
+*/migrations/*/*
+*/migrations/*/*/*
+!*/migrations/__init__.py
