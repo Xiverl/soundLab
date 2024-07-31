@@ -4,7 +4,7 @@ from feedback.models import UserFeedback
 
 
 class UserInfoSerializer(serializers.ModelSerializer):
-    """Сериализатор для ингредиентов."""
+    """Сериализатор для формы обратной связи."""
 
     class Meta:
         model = UserFeedback
