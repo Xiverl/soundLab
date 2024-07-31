@@ -30,64 +30,41 @@ git clone https://github.com/your-username/soundlab.git
 
 2. Перейдите в директорию проекта:
 ```bash
-cd soundlab
+cd infra
 ```
 
-4. Создайте и активируйте виртуальное окружение:
+4. Запустите docker compose:
 ```bash
-python -m venv venv source venv/bin/activate
+docker compose up --build
 ```
 
-6. Установите зависимости:
+6. Проведите миграции в базе данных через docker:
 ```bash
-pip install -r requirements.txt
+docker-compose exec backend python manage.py migrate
 ```
 
-8. Выполните миграции:
-```bash
-python manage.py migrate
-```
+7. Откройте в браузере `http://localhost/`
 
-10. Запустите сервер разработки:
-```bash
-python manage.py runserver
-```
+## Настройки поекта
 
-12. Откройте в браузере `http://127.0.0.1:8000/`
-
-## Настройки smtp сервера
+Для полноценной работы под ваши требования вам необходимо создать конфигурационные файл ```.env``` с таким содержимым:
 
 ```python
-EMAIL_HOST = 'тут_указываем_адрес_smtp'
-EMAIL_PORT = 'здесь_указываем_порт_smtp'
-EMAIL_USE_SSL = False # Можно не трогать
-EMAIL_HOST_USER = 'Здесь_почта_отправителя'
-DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
-EMAIL_HOST_PASSWORD = os.getenv('EMAIL_PASSWORD') # Берется из env файла
+SECRET_KEY="django_secret_key" #секетный ключ проекта
+
+EMAIL_ADMIN="admin@email.com" # почта администратора сайта
+EMAIL_HOST_USER="support@mydomen.com" # Почта отправителя
+EMAIL_PASSWORD="password_email" # Пароль почты отправителя
+EMAIL_HOST="my.smtp.com" # smpt сервер
+EMAIL_POST=25 # Рабочий порт smtp сервера
+
+TELEGRAM_BOT_TOKEN="your_token_for_telegram" # Токен телеграм бота
+ADMIN_TELEGRAM_CHAT_ID="your_chat_id" # id чата админа в телеграмме
+
+# Настройки базы данных
+POSTGRES_USER=User # Пользователь базы данных
+POSTGRES_PASSWORD=12345 # Пароль пользователя от базы данных
+POSTGRES_DB=soundLib # Название базы данных (можете использовать свое название)
+DB_HOST=db # host не трогать
+DB_PORT=5432 # порт не трогать
 ```
-
-
-## Настройки связи между API и frontend
-
-Необходимо изменить некоторые настройи в ```settings.py```:
-
-```python
-CORS_ALLOWED_ORIGINS = [
-    'http://localhost:5173',  # Замените на URL вашего React-приложения
-]
-```
-
-
-## Дополнительные настройки виртуального окружения
-
-В проекте также используется файл виртуального окружения ```.env```.
-В нем хранятся дополнительные настройки проекта. Пример ```.env```:
-
-```python
-EMAIL_OUT="Надо_указать_почту_админа"
-SECRET_KEY="Секретный_ключ_проекта"
-EMAIL_PASSWORD="Пароль_почту_отправителя_для_smtp"
-TELEGRAM_BOT_TOKEN="Токен_телеграм_бота"
-ADMIN_TELEGRAM_CHAT_ID="id_чата_админа_в_телеграме"
-```
-
