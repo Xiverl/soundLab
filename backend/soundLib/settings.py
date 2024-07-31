@@ -92,6 +92,8 @@ WSGI_APPLICATION = 'soundLib.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
+# Раскоментировать при развертке проекта локально
+
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.sqlite3',
